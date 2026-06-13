@@ -8,7 +8,7 @@ app = FastAPI(title="Demo Broken Python App")
 # FastAPI raises an error / warning or it is a high-risk security issue when allow_origins=["*"] is combined with allow_credentials=True.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"], # Fixed: Replaced "*" with a specific trusted origin for security
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
